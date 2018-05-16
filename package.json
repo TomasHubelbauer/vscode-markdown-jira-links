@@ -1,0 +1,77 @@
+{
+    "name": "markdown-jira-links",
+    "displayName": "MarkDown Jira Links",
+    "description": "Highlights configured Jira ticket codes in MarkDown files and makes them clickable",
+    "version": "1.0.0",
+    "license": "MIT",
+    "categories": [
+        "Programming Languages"
+    ],
+    "keywords": [
+        "markdown",
+        "link",
+        "jira",
+        "ticket"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/TomasHubelbauer/vscode-markdown-jira-links.git"
+    },
+    "publisher": "TomasHubelbauer",
+    "engines": {
+        "vscode": "^1.23.0"
+    },
+    "activationEvents": [
+        "onLanguage:markdown"
+    ],
+    "main": "./out/extension",
+    "contributes": {
+        "configuration": {
+            "title": "MarkDown Jira Ticket Links",
+            "properties": {
+                "markDownJiraLinks.codesToUrls": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "code": {
+                                "type": "string"
+                            },
+                            "url": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "scripts": {
+            "vscode:prepublish": "npm run compile",
+            "compile": "tsc -p ./",
+            "watch": "tsc -watch -p ./",
+            "postinstall": "node ./node_modules/vscode/bin/install",
+            "test": "npm run compile && node ./node_modules/vscode/bin/test"
+        },
+        "devDependencies": {
+            "typescript": "^2.6.1",
+            "vscode": "^1.1.6",
+            "tslint": "^5.8.0",
+            "@types/node": "^7.0.43",
+            "@types/mocha": "^2.2.42"
+        }
+    },
+    "scripts": {
+        "vscode:prepublish": "npm run compile",
+        "compile": "tsc -p ./",
+        "watch": "tsc -watch -p ./",
+        "postinstall": "node ./node_modules/vscode/bin/install",
+        "test": "npm run compile && node ./node_modules/vscode/bin/test"
+    },
+    "devDependencies": {
+        "typescript": "^2.6.1",
+        "vscode": "^1.1.6",
+        "tslint": "^5.8.0",
+        "@types/node": "^7.0.43",
+        "@types/mocha": "^2.2.42"
+    }
+}
