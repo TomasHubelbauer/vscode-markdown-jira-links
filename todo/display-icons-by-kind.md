@@ -1,5 +1,7 @@
-# Display icons by kind
+# Display decorator icons by ticket kind
 
-See if I can contribute a decorator image like in Visual Studio.
-Download ticket information using Jira API and display the appropriate icon.
-Cache API results and only refresh on icon click.
+- Retrieve Jira name and password using key-tar or ask for it and save it
+- For each ticket, check if persistent cache has its kind or download API info for it
+- Use appropriate icon as per the ticket kind
+- Contribute a command for clearing the icon cache
+- Consider linking directly to icon files in Jira if provided using Jira API otherwise download

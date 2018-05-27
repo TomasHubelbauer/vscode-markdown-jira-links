@@ -2,7 +2,7 @@
     "name": "markdown-jira-links",
     "displayName": "MarkDown Jira Links",
     "description": "Highlights configured Jira ticket codes in MarkDown files and makes them clickable",
-    "version": "1.0.0",
+    "version": "2.0.0",
     "license": "MIT",
     "categories": [
         "Programming Languages"
@@ -63,6 +63,9 @@
     "scripts": {
         "vscode:prepublish": "npm run compile",
         "compile": "tsc -p ./",
+        "postcompile": "npm run copy",
+        "prewatch": "npm run copy",
+        "copy": "node cmd/cp-ico.js",
         "watch": "tsc -watch -p ./",
         "postinstall": "node ./node_modules/vscode/bin/install",
         "test": "npm run compile && node ./node_modules/vscode/bin/test"
@@ -73,5 +76,8 @@
         "tslint": "^5.8.0",
         "@types/node": "^7.0.43",
         "@types/mocha": "^2.2.42"
+    },
+    "dependencies": {
+        "shelljs": "^0.8.2"
     }
 }
